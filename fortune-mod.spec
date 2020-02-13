@@ -4,7 +4,7 @@
 #
 Name     : fortune-mod
 Version  : 2.10.0
-Release  : 6
+Release  : 7
 URL      : https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-2.10.0.tar.xz
 Source0  : https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-2.10.0.tar.xz
 Summary  : No detailed summary available
