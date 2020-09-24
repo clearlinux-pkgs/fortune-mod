@@ -1,6 +1,133 @@
 (Note: this file has been re-arranged to be in reverse chronological
 order, which is The Right Thing for ChangeLogs - DLC)
 
+September 24, 2020 (fortune-mod 3.2.0)
+
+	Include rinutils in the source tarball / git checkout.
+	( https://github.com/shlomif/fortune-mod/issues/44 )
+
+September 16, 2020 (fortune-mod 3.0.0)
+
+	Convert the documentation from troff to DocBook 5/XML using
+	doclifter ( http://www.catb.org/~esr/doclifter/ ). The resultant troff
+	man pages are included in the source release tarball.
+
+	Fix formatting of several cookies.
+
+	Minor build fixes (avoid rebuilding the symlinks).
+
+	Fix the build and tests on AppVeyor-CI / Windows
+
+	Fix some compiler warnings and modernise the code a little.
+
+	Add some new fortune cookies.
+
+	New major version digit just in time for Rosh Hashana
+	and Talk like a Pirate day. Happy new yea..arrrrrrrrr!
+
+August 30, 2020 (fortune-mod 2.29.1)
+
+	DEVELOPMENT RELEASE
+
+	Fix the build and tests on AppVeyor-CI / Windows
+
+	Fix some compiler warnings.
+
+August 20, 2020 (fortune-mod 2.29.0)
+
+	DEVELOPMENT RELEASE
+
+	Convert the documentation from troff to DocBook 5/XML using
+	doclifter ( http://www.catb.org/~esr/doclifter/ ). The resultant troff
+	man pages are included in the source release tarball.
+
+	Fix formatting of several cookies.
+
+	Minor build fixes (avoid rebuilding the symlinks).
+
+June 02, 2020 (fortune-mod 2.28.0)
+
+	SECURITY [low risk]: avoid overflow with the -i flag
+
+	Correct attributions and typos (Thanks to Tobin Yehle.)
+
+	Small code cleanups.
+
+May 02, 2020 (fortune-mod 2.26.0)
+
+	SECURITY: Avoid integer overflow in parsing the percentages which caused
+	using negative integers.
+
+	https://metacpan.org/pod/Test::Trap is a new tests' dependency
+
+	Format strings cleanups in C.
+
+April 30, 2020 (fortune-mod 2.24.0)
+
+	SECURITY: Avoid some potential buffer overflows in unstr, strfile and randstr.
+		- This was found to exist in NetBSD's fortune, and FreeBSD's fortune
+		as well (OpenBSD's fortune appear to have been fixed).
+
+	Add regression valgrind tests for the buffer overflows.
+
+	Some cleanups inspired by OpenBSD'd fortune.
+
+April 29, 2020 (fortune-mod 2.22.0)
+
+	SECURITY: Avoid some hypothetical buffer overflows in unstr, strfile and randstr.
+
+	Modernize and refactor the code.
+
+	Avoid build targets' proliferation in CMake.
+
+April 04, 2020 (fortune-mod 2.20.0)
+
+	Further avoid double traversal if FORTDIR == LOCFORTDIR.
+
+	Using clang-format to format the code.
+
+	Eliminate -D_FORTIFY_SOURCE warnings.
+
+	Modernize and refactor the code.
+
+March 30, 2020 (fortune-mod 2.18.0)
+
+	Avoid double traversal if FORTDIR == LOCFORTDIR.
+
+	Typos' corrections and a new quote.
+
+February 26, 2020 (fortune-mod 2.16.0)
+
+	Better portability to Microsoft Windows and other OSes
+	Thanks to AppVeyor (done by Shlomi Fish).
+
+	Add the -u flag [from debian]
+
+	Add fortune.desktop [from debian]
+
+	Remove backspaces in a cookie [from debian]
+
+	Complete the lyrics of a Leonard Cohen song [from debian]
+
+	Correct a misattribution.
+
+February 23, 2020 (fortune-mod 2.14.0)
+
+	Correct some typos and add some new cookies.
+
+	Better Win32/Win64 Portability (AppVeyor is still failing.)
+
+	Code cleanups.
+
+December 18, 2019 (fortune-mod 2.12.0)
+
+	Extract rinutils as a package and require it as a dep:
+	https://github.com/shlomif/rinutils/ .
+
+	Move some jokes to the offensive collection:
+	https://github.com/shlomif/fortune-mod/pull/38 - thanks
+	to @s0nata .
+
 June 30, 2019 (fortune-mod 2.10.0)
 
 	Move strfile and unstr to /usr/bin :
