@@ -4,7 +4,7 @@
 #
 Name     : fortune-mod
 Version  : 3.6.1
-Release  : 11
+Release  : 12
 URL      : https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-3.6.1.tar.xz
 Source0  : https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-3.6.1.tar.xz
 Summary  : Ad hoc headers library for C
@@ -47,34 +47,37 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622558277
+export SOURCE_DATE_EPOCH=1644854439
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1622558277
+export SOURCE_DATE_EPOCH=1644854439
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
 popd
+## install_append content
+mv %{buildroot}/usr/games/fortune %{buildroot}/usr/bin/fortune
+## install_append end
 
 %files
 %defattr(-,root,root,-)
-/usr/games/fortune
 
 %files bin
 %defattr(-,root,root,-)
+/usr/bin/fortune
 /usr/bin/rot
 /usr/bin/strfile
 /usr/bin/unstr

@@ -1,0 +1,1 @@
+mv %{buildroot}/usr/games/fortune %{buildroot}/usr/bin/fortune
