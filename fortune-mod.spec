@@ -7,7 +7,7 @@
 #
 Name     : fortune-mod
 Version  : 3.20.0
-Release  : 19
+Release  : 20
 URL      : https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-3.20.0.tar.xz
 Source0  : https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-3.20.0.tar.xz
 Summary  : Ad hoc headers library for C
@@ -63,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707076709
+export SOURCE_DATE_EPOCH=1707144399
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -122,7 +122,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1707076709
+export SOURCE_DATE_EPOCH=1707144399
 rm -rf %{buildroot}
 pushd clr-build-avx2
 %make_install_v3  || :
@@ -132,12 +132,12 @@ pushd clr-build
 popd
 ## install_append content
 mv %{buildroot}/usr/games/fortune %{buildroot}/usr/bin/fortune
+rm -f %{buildroot}*/usr/games/fortune
 ## install_append end
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
-/V3/usr/games/fortune
 
 %files bin
 %defattr(-,root,root,-)

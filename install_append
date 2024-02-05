@@ -1,1 +1,2 @@
 mv %{buildroot}/usr/games/fortune %{buildroot}/usr/bin/fortune
+rm -f %{buildroot}*/usr/games/fortune 
